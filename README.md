@@ -1,39 +1,793 @@
->Benito Cafe</title> <script src=" https://telegram.org/js/telegram-web-app.js"></script> <style> :root{--bg:#121512;--card:#1d221d;--green:#6f8f5f;--text:#f2f2ee;--muted:#9aa396} *{box-sizing:border-box;-webkit-tap-highlight-color:transparent} body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Roboto,sans-serif;padding-bottom:90px} sarlavha{text-align:center;padding:14px 0 6px;font-weight:800;letter-spacing:6px;font-size:22px;color:var(--green)} sarlavha kichik {display:block;shrift-size:11px;letter-spacing:3px;color:var(--muted);shrift-weight:400} nav {position:sticky;top:0;background:var(--bg);display:flex;gap:8px;overflow-x:auto;padding:10px 12px;z-index:5} navigatsiya tugmasi {flex:none;border:0;background:var(--card);color:var(--text);padding:9px 14px;border-radius:20px;shrift-size:14px} h2 {margin:14px 14px 8px;font-size:18px;scroll-margin-top:62px} .grid {display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 12px} .card{background:var(--card);border-radius:16px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;min-height:140px} .emo{shrift-size:34px;matn-align:center} .nm{shrift-size:14px;chegara:6px 0 2px} .pr{color:var(--green);shrift-weight:700;shrift-size:14px} .row{chegara-top:8px} .add{border:0;background:var(--green);color:#10140f;width:100%;padding:9px;border-radius:12px;shrift-weight:700;shrift-size:14px} .step{display:flex;align-items:center;justify-content:space-between;width:100%} .step tugmasi{border:0;background:var(--green);color:#10140f;width:38px;height:34px;border-radius:10px;font-size:20px;font-weight:700} .step span{font-weight:700} #bar{position:fixed;left:0;right:0;bottom:0;padding:10px 12px 14px;background:linear-gradient(transparent,var(--bg) 30%)} #bar button{width:100%;border:0;background:var(--green);color:#10140f;padding:15px;border-radius:16px;font-size:16px;font-weight:800} #bar button.off{opacity:.4} #varaq{pozitsiya:fixed;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.65);display:none;align-items:flex-end;z-index:10} #varaq.show{display:flex} .pane{background:var(--bg);width:100%;max-height:85vh;overflow:auto;border-radius:20px 20px 0 0;padding:16px} .line{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px qattiq #2a302a;gap:10px} .line .l{flex:1;shrift-size:14px;color:var(--muted)} .line .lb{display:block;color:var(--text)} .sum{display:flex;justify-content:space-between;padding:6px 0;color:var(--muted)} .sum.t{color:var(--text);shrift-weight:800;shrift-size:17px} .sec{display:flex;gap:10px;margin-top:14px} .sec button{flex:1;border:0;border-radius:14px;padding:14px;shrift-size:15px;shrift-weight:700} .b1{background:var(--card);color:var(--text)} .b2{background:var(--green);color:#10140f} </style> BENITOFAMILY KAFE
-Savat bo'sh
-<script> var tg = window.Telegram && window.Telegram.WebApp; if (tg) { tg.ready(); tg.expand(); } var YETKAZIB BERISH = 5000; var MENU = [ {n:"Hot-dog", e:"🌭", items:[["Canada",14000],["Shoxona",20000],["Retro",18000],["Qazili",32000],["Qozili kichik",26000],[",Qazi[0"assor kichik",24000],["Go'shtli",25000],["Xalapeno",20000]]}, {n:"Lavash", e:"🌯", buyumlar:[["Original",34000],["Pishloqli",37000],["Qalampir",34000],["Super",38000],["Kichik",23000]]}, {n:"Burger", e:"🍔", mahsulotlar:[["Tovuqli burger",25000],["Gam burger",25000],["Pishloqli burger",28000],["Double burger",34000],["Double cheeseburger",38000]]}, {n:"🥇", {n:"Bosh buyumlar:[["Toster",30000],["Donar",45000],["Nonkabob",35000],["Nonkabob kichik",26000],["Club sendwich",35000],["Sezar salat",30000],["Kartoshka"00ar0shka,["Kartoshka"00ar0shka,[5K] kichik",9000]]}, {n:"Nagetto", e:"🍗", elementlar:[["Nagetto" 6 talik",15000],["Nagetto 8 talik",18000],["Nagetto 18 talik",38000]]}, {n:"Choy va kofe", e:"☕", itemlar:[["Ko'k choy",4000],["Qora choy",4000],["Ko'ra choy",4000],["Limon choyi qora",8000],["Kofe malochniy",8000]]}, {n:"Ichimliklar", e:"🥤", itemlar:[["Tabiiy sharbat",15000],["Flavis katta",12000],["Flavis kichik",8000],["Family 0.0]var,["Flavis kichik",8000],["Family 0.0]var =,]4S; {}, sheetOpen = false; MENU.forEach(function(c, ci){ c.items.forEach(function(it){ ITEMS.push({n:it[0], p:it[1], e:ce}); }); }); }); }
-funktsiya som(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " so'm"; }
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#121512">
 
-function ctl(i){ var q = cart[ITEMS[i].n] || 0; agar (!q) '+ Qo'shish' ni qaytarsa; ' ni qaytarsa
+<title>Benito Cafe</title>
 
-− ' + q + ' +
-'; }
-var nav = document.getElementById("nav"), html = "", idx = 0; MENU.forEach(function(c, ci){ var b = document.createElement("tugma"); b.textContent = ce + "" + cn; b.onclick = function(){ document.getElementById("cat" + ci).scrollIntoView({behavior:"smooth"}); }; nav.appendChild(b); html += '
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-' + ce + ' ' + cn + '
-'; c.items.forEach(function(it){ html += '
-' + ce + '
-'+ it[0] + '
-' + som(it[1]) + '
-'+ ctl(idx) + '
-'; idx++; }); html += '
-'; }); document.getElementById("menyu").innerHTML = html;
-function jamul(){ var c = 0, t = 0; ITEMS.forEach(function(it){ var q = cart[it.n] || 0; c += q; t += q * it.p; }); return {c:c, t:t}; } function bar(){ var s = jamul(), b = document.getElementById("cartBtn"); if (!sc){ b.className = "off"; b.textContent = "Savat bo'sh"; } else { b.className = ""; b.textContent = "🧺 Savat · " + sc + " ta · " + som(st); } } function changed(i){ document.getElementById("c" + i).innerHTML = ctl(i); bar(); if (sheetOpen){ if (totals().c) openCart(); else closeCart(); } } funktsiya add(i){ var n = ITEMS[i].n; cart[n] = (cart[n] || 0) + 1; changed(i); } funktsiya sub(i){ var n = ITEMS[i].n; if (!cart[n]) return; cart[n]--; if (cart[n] <= 0) delete cart[n]; changed(i); }
+<style>
+:root {
+  --bg:#121512;
+  --card:#1d221d;
+  --green:#8da878;
+  --text:#f2f2ee;
+  --muted:#9aa396;
+  --border:#303830;
+}
 
-openCart() funksiyasi { var s = jami(); agar (!sc) return; varaqOpen = rost; var h = '
+* {
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
 
-🧺 Savatingiz
-'; ITEMS.forEach(function(it, i){ var q = cart[it.n] || 0; agar (!q) qaytarsa; h += '
-' + it.n + ' ' + som(it.p * q) + '
-− ' + q + ' +
-'; }); h += '
-Taomlar ' + som(st) + '
-'; h += '
-Yetkazish ' + som(DELVERY) + '
-'; h += '
-Jami ' + som(st + YETKAZI) + '
-'; h += '
-To'lov Naqd pul
-'; h += '
-⬅️ Menyuga✅ Buyurtma berish
-'; document.getElementById("panel").innerHTML = h; document.getElementById("varaq").className = "show"; } funktsiya closeCart(){ varaqOpen = false; document.getElementById("varaq").className = ""; } document.getElementById("cartBtn").onclick = openCart; document.getElementById("varaq").onclick = function(e){ if (e.target === this) closeCart(); };
-function order(){ var items = []; Object.keys(cart).forEach(function(n){ items.push([n, cart[n]]); }); if (!items.length) return; var data = JSON.stringify({i: items}); if (tg && tg.initData) { tg.sendData(data); } else { alert("Signal rejimi (Telegramdan tashqarida):\n" + data); } } </script>
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,Arial,sans-serif;
+  padding-bottom:100px;
+}
+
+header {
+  text-align:center;
+  padding:24px 10px 15px;
+}
+
+.logo {
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:6px;
+  color:var(--green);
+}
+
+.subtitle {
+  font-size:10px;
+  letter-spacing:4px;
+  color:var(--muted);
+  margin-top:5px;
+}
+
+.banner {
+  margin:10px 12px 18px;
+  padding:20px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#293529,#172018);
+  border:1px solid var(--border);
+}
+
+.banner h2 {
+  margin:0 0 7px;
+  font-size:21px;
+}
+
+.banner p {
+  color:var(--muted);
+  font-size:13px;
+  margin:0;
+}
+
+nav {
+  position:sticky;
+  top:0;
+  z-index:5;
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:12px;
+  background:var(--bg);
+  scrollbar-width:none;
+}
+
+nav button {
+  flex:none;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  padding:10px 15px;
+  border-radius:20px;
+  font-size:13px;
+}
+
+nav button.active {
+  background:var(--green);
+  color:#10140f;
+}
+
+h2.category {
+  margin:20px 14px 12px;
+  font-size:19px;
+  scroll-margin-top:70px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:11px;
+  padding:0 12px;
+}
+
+.card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:17px;
+  overflow:hidden;
+  min-width:0;
+}
+
+.food-image {
+  height:115px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:65px;
+  background:linear-gradient(135deg,#293329,#202720);
+}
+
+.food-info {
+  padding:11px;
+}
+
+.food-name {
+  font-size:14px;
+  font-weight:700;
+  min-height:38px;
+}
+
+.price {
+  color:var(--green);
+  font-size:15px;
+  font-weight:800;
+  margin:7px 0;
+}
+
+.add {
+  width:100%;
+  border:0;
+  border-radius:11px;
+  padding:10px 5px;
+  background:var(--green);
+  color:#10140f;
+  font-weight:800;
+  font-size:13px;
+}
+
+.counter {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+
+.counter button {
+  border:0;
+  width:35px;
+  height:34px;
+  border-radius:10px;
+  background:var(--green);
+  color:#10140f;
+  font-size:20px;
+  font-weight:800;
+}
+
+.counter span {
+  font-weight:800;
+}
+
+#bar {
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:12px;
+  background:linear-gradient(transparent,var(--bg) 25%);
+  z-index:8;
+}
+
+#cartBtn {
+  width:100%;
+  border:0;
+  border-radius:15px;
+  padding:16px;
+  background:var(--green);
+  color:#10140f;
+  font-size:16px;
+  font-weight:900;
+}
+
+#cartBtn.off {
+  opacity:.45;
+}
+
+#modal {
+  position:fixed;
+  inset:0;
+  background:#000a;
+  display:none;
+  align-items:flex-end;
+  z-index:20;
+}
+
+#modal.show {
+  display:flex;
+}
+
+.panel {
+  width:100%;
+  max-height:88vh;
+  overflow-y:auto;
+  background:var(--bg);
+  border-radius:22px 22px 0 0;
+  padding:20px 15px 30px;
+}
+
+.panel h2 {
+  margin:0 0 15px;
+}
+
+.cart-item {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:12px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.cart-item-name {
+  flex:1;
+  font-size:14px;
+  font-weight:600;
+}
+
+.cart-item-price {
+  color:var(--green);
+  font-size:13px;
+}
+
+.cart-controls {
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+
+.cart-controls button {
+  width:30px;
+  height:30px;
+  border:0;
+  border-radius:8px;
+  background:var(--green);
+  font-weight:900;
+}
+
+.summary {
+  margin-top:18px;
+}
+
+.summary div {
+  display:flex;
+  justify-content:space-between;
+  padding:7px 0;
+  color:var(--muted);
+}
+
+.summary .total {
+  color:var(--text);
+  font-size:19px;
+  font-weight:900;
+  border-top:1px solid var(--border);
+  margin-top:8px;
+  padding-top:14px;
+}
+
+.payment {
+  margin-top:20px;
+  padding:14px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:13px;
+}
+
+.payment label {
+  font-size:14px;
+}
+
+.actions {
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+.actions button {
+  flex:1;
+  padding:15px 5px;
+  border:0;
+  border-radius:13px;
+  font-weight:800;
+  font-size:14px;
+}
+
+.back {
+  background:var(--card);
+  color:var(--text);
+}
+
+.order {
+  background:var(--green);
+  color:#10140f;
+}
+
+.empty {
+  text-align:center;
+  padding:35px 10px;
+  color:var(--muted);
+}
+
+footer {
+  text-align:center;
+  padding:30px 10px;
+  color:var(--muted);
+  font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">BENITO</div>
+  <div class="subtitle">FAMILY CAFE</div>
+</header>
+
+<div class="banner">
+  <h2>Benito Cafe'ga xush kelibsiz! 🍔</h2>
+  <p>Sevimli taomlaringizni tanlang va buyurtma bering.</p>
+</div>
+
+<nav id="nav"></nav>
+
+<main id="menu"></main>
+
+<footer>
+  BENITO FAMILY CAFE<br>
+  Mazali taomlar — yaxshi kayfiyat!
+</footer>
+
+<div id="bar">
+  <button id="cartBtn" class="off">🧺 Savat bo'sh</button>
+</div>
+
+<div id="modal">
+  <div class="panel" id="panel"></div>
+</div>
+
+<script>
+
+// TELEGRAM
+const tg = window.Telegram?.WebApp;
+
+if (tg) {
+  tg.ready();
+  tg.expand();
+}
+
+// SOZLAMALAR
+const DELIVERY = 5000;
+
+// MAHSULOTLAR
+const MENU = [
+
+{
+ name:"Hot-dog",
+ emoji:"🌭",
+ items:[
+  ["Kanada",14000],
+  ["Shoxona",20000],
+  ["Retro",18000],
+  ["Qazili",32000],
+  ["Qozili kichik",26000],
+  ["Go'shtli",25000],
+  ["Xalapeno",20000]
+ ]
+},
+
+{
+ name:"Lavash",
+ emoji:"🌯",
+ items:[
+  ["Original",34000],
+  ["Pishloqli",37000],
+  ["Qalampir",34000],
+  ["Super",38000],
+  ["Kichik",23000]
+ ]
+},
+
+{
+ name:"Burger",
+ emoji:"🍔",
+ items:[
+  ["Tovuqli burger",25000],
+  ["Gam burger",25000],
+  ["Pishloqli burger",28000],
+  ["Double burger",34000],
+  ["Double cheeseburger",38000]
+ ]
+},
+
+{
+ name:"Bosh taomlar",
+ emoji:"🍽️",
+ items:[
+  ["Toster",30000],
+  ["Donar",45000],
+  ["Nonkabob",35000],
+  ["Nonkabob kichik",26000],
+  ["Club sandwich",35000],
+  ["Sezar salat",30000],
+  ["Kartoshka fri",12000],
+  ["Kartoshka fri kichik",9000]
+ ]
+},
+
+{
+ name:"Nagget",
+ emoji:"🍗",
+ items:[
+  ["Nagget 6 talik",15000],
+  ["Nagget 8 talik",18000],
+  ["Nagget 18 talik",38000]
+ ]
+},
+
+{
+ name:"Choy va kofe",
+ emoji:"☕",
+ items:[
+  ["Ko'k choy",4000],
+  ["Qora choy",4000],
+  ["Limon choyi qora",8000],
+  ["Kofe malochniy",8000]
+ ]
+},
+
+{
+ name:"Ichimliklar",
+ emoji:"🥤",
+ items:[
+  ["Tabiiy sharbat",15000],
+  ["Flavis katta",12000],
+  ["Flavis kichik",8000]
+ ]
+}
+
+];
+
+// MAHSULOTLAR RO'YXATI
+const PRODUCTS = [];
+
+MENU.forEach((category,index)=>{
+ category.items.forEach((item)=>{
+  PRODUCTS.push({
+   name:item[0],
+   price:item[1],
+   emoji:category.emoji,
+   category:index
+  });
+ });
+});
+
+// SAVAT
+let cart = {};
+let sheetOpen = false;
+
+// SO'M FORMAT
+function money(number){
+ return number.toLocaleString("uz-UZ")+" so'm";
+}
+
+// SAVAT MIQDORI
+function quantity(name){
+ return cart[name] || 0;
+}
+
+// HISOBLASH
+function totals(){
+ let count=0;
+ let subtotal=0;
+
+ PRODUCTS.forEach(item=>{
+  let q=quantity(item.name);
+  count+=q;
+  subtotal+=q*item.price;
+ });
+
+ return {
+  count,
+  subtotal,
+  total:subtotal+(count>0?DELIVERY:0)
+ };
+}
+
+// MAHSULOT TUGMASI
+function productButton(item){
+
+ let q=quantity(item.name);
+
+ if(!q){
+  return `<button class="add" onclick="addItem('${escapeName(item.name)}')">+ Qo'shish</button>`;
+ }
+
+ return `
+ <div class="counter">
+  <button onclick="removeItem('${escapeName(item.name)}')">−</button>
+  <span>${q}</span>
+  <button onclick="addItem('${escapeName(item.name)}')">+</button>
+ </div>
+ `;
+}
+
+// MATNNI XAVFSIZ UZATISH
+function escapeName(name){
+ return name.replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+}
+
+// MENYUNI CHIZISH
+function renderMenu(){
+
+ const nav=document.getElementById("nav");
+ const menu=document.getElementById("menu");
+
+ nav.innerHTML="";
+ menu.innerHTML="";
+
+ MENU.forEach((category,index)=>{
+
+  let button=document.createElement("button");
+  button.textContent=category.emoji+" "+category.name;
+
+  button.onclick=()=>{
+   document.getElementById("cat"+index)
+   .scrollIntoView({behavior:"smooth"});
+  };
+
+  nav.appendChild(button);
+
+  let html=`
+  <h2 class="category" id="cat${index}">
+   ${category.emoji} ${category.name}
+  </h2>
+  <div class="grid">
+  `;
+
+  category.items.forEach(item=>{
+
+   const product=PRODUCTS.find(p=>p.name===item[0]);
+
+   html+=`
+   <div class="card">
+    <div class="food-image">${category.emoji}</div>
+
+    <div class="food-info">
+     <div class="food-name">${product.name}</div>
+     <div class="price">${money(product.price)}</div>
+     <div id="btn-${PRODUCTS.indexOf(product)}">
+      ${productButton(product)}
+     </div>
+    </div>
+   </div>
+   `;
+
+  });
+
+  html+="</div>";
+
+  menu.innerHTML+=html;
+
+ });
+
+}
+
+// SAVAT TUGMASI
+function updateButtons(){
+
+ PRODUCTS.forEach((item,index)=>{
+  let element=document.getElementById("btn-"+index);
+
+  if(element){
+   element.innerHTML=productButton(item);
+  }
+ });
+
+ updateBar();
+}
+
+// SAVAT PANELI
+function updateBar(){
+
+ const t=totals();
+ const btn=document.getElementById("cartBtn");
+
+ if(t.count===0){
+  btn.className="off";
+  btn.textContent="🧺 Savat bo'sh";
+ }else{
+  btn.className="";
+  btn.textContent=
+   "🧺 Savat · "+t.count+" ta · "+money(t.total);
+ }
+
+}
+
+// QO'SHISH
+function addItem(name){
+
+ cart[name]=(cart[name]||0)+1;
+
+ updateButtons();
+
+ if(sheetOpen) openCart();
+}
+
+// KAMAYTIRISH
+function removeItem(name){
+
+ if(!cart[name]) return;
+
+ cart[name]--;
+
+ if(cart[name]<=0){
+  delete cart[name];
+ }
+
+ updateButtons();
+
+ if(sheetOpen) openCart();
+}
+
+// SAVATNI OCHISH
+function openCart(){
+
+ const t=totals();
+
+ if(!t.count) return;
+
+ sheetOpen=true;
+
+ let html=`
+ <h2>🧺 Savatingiz</h2>
+ `;
+
+ PRODUCTS.forEach(item=>{
+
+  const q=quantity(item.name);
+
+  if(!q) return;
+
+  html+=`
+  <div class="cart-item">
+
+   <div>
+    <div class="cart-item-name">${item.name}</div>
+    <div class="cart-item-price">${money(item.price*q)}</div>
+   </div>
+
+   <div class="cart-controls">
+    <button onclick="removeItem('${escapeName(item.name)}')">−</button>
+    <span>${q}</span>
+    <button onclick="addItem('${escapeName(item.name)}')">+</button>
+   </div>
+
+  </div>
+  `;
+
+ });
+
+ html+=`
+ <div class="summary">
+
+  <div>
+   <span>Taomlar</span>
+   <span>${money(t.subtotal)}</span>
+  </div>
+
+  <div>
+   <span>Yetkazib berish</span>
+   <span>${money(DELIVERY)}</span>
+  </div>
+
+  <div class="total">
+   <span>Jami</span>
+   <span>${money(t.total)}</span>
+  </div>
+
+ </div>
+
+ <div class="payment">
+  <label>💵 To'lov turi: <b>Naqd pul</b></label>
+ </div>
+
+ <div class="actions">
+  <button class="back" onclick="closeCart()">⬅️ Menyu</button>
+  <button class="order" onclick="sendOrder()">Buyurtma berish ✅</button>
+ </div>
+ `;
+
+ document.getElementById("panel").innerHTML=html;
+ document.getElementById("modal").classList.add("show");
+
+}
+
+// SAVATNI YOPISH
+function closeCart(){
+
+ sheetOpen=false;
+
+ document.getElementById("modal")
+ .classList.remove("show");
+
+}
+
+// BUYURTMA YUBORISH
+function sendOrder(){
+
+ const t=totals();
+
+ if(!t.count) return;
+
+ const items=PRODUCTS
+ .filter(item=>quantity(item.name)>0)
+ .map(item=>({
+  name:item.name,
+  price:item.price,
+  quantity:quantity(item.name)
+ }));
+
+ const order={
+  type:"benito_order",
+  payment:"Naqd pul",
+  delivery:DELIVERY,
+  subtotal:t.subtotal,
+  total:t.total,
+  items:items
+ };
+
+ const data=JSON.stringify(order);
+
+ if(tg && tg.initData){
+
+  tg.sendData(data);
+
+ }else{
+
+  alert(
+   "Telegram orqali ochilmagan!\n\n"+
+   "Buyurtma ma'lumoti:\n"+data
+  );
+
+ }
+
+}
+
+// MODAL
+document.getElementById("modal").onclick=function(e){
+
+ if(e.target===this){
+  closeCart();
+ }
+
+};
+
+document.getElementById("cartBtn").onclick=openCart;
+
+// ISHGA TUSHIRISH
+renderMenu();
+updateBar();
+
+</script>
+
+</body>
+</html>
