@@ -3,65 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="color-scheme" content="light">
 <title>Benito Cafe</title>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
-:root{--bg:#121512;--card:#1d221d;--green:#6f8f5f;--text:#f2f2ee;--muted:#9aa396}
+:root{--bg:#ffffff;--ink:#2a2118;--muted:#8a7f74;--line:#f0e8df;--or:#ff6a2b;--or2:#ffa13c;--soft:#fff3e8;--green:#5f7a52}
+html{color-scheme:light}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Roboto,sans-serif;padding-bottom:90px}
-header{text-align:center;padding:14px 0 6px;font-weight:800;letter-spacing:6px;font-size:22px;color:var(--green)}
-header small{display:block;font-size:11px;letter-spacing:3px;color:var(--muted);font-weight:400}
-nav{position:sticky;top:0;background:var(--bg);display:flex;gap:8px;overflow-x:auto;padding:10px 12px;z-index:5}
-nav button{flex:none;border:0;background:var(--card);color:var(--text);padding:9px 14px;border-radius:20px;font-size:14px}
-h2{margin:14px 14px 8px;font-size:18px;scroll-margin-top:62px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 12px}
-.card{background:var(--card);border-radius:16px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;min-height:140px}
-.emo{font-size:34px;text-align:center}
-.nm{font-size:14px;margin:6px 0 2px}
-.pr{color:var(--green);font-weight:700;font-size:14px}
-.row{margin-top:8px}
-.add{border:0;background:var(--green);color:#10140f;width:100%;padding:9px;border-radius:12px;font-weight:700;font-size:14px}
-.step{display:flex;align-items:center;justify-content:space-between;width:100%}
-.step button{border:0;background:var(--green);color:#10140f;width:38px;height:34px;border-radius:10px;font-size:20px;font-weight:700}
-.step span{font-weight:700}
-#bar{position:fixed;left:0;right:0;bottom:0;padding:10px 12px 14px;background:linear-gradient(transparent,var(--bg) 30%)}
-#bar button{width:100%;border:0;background:var(--green);color:#10140f;padding:15px;border-radius:16px;font-size:16px;font-weight:800}
-#bar button.off{opacity:.4}
-#sheet{position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,.65);display:none;align-items:flex-end;z-index:10}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Roboto,Arial,sans-serif;padding-bottom:110px}
+header{text-align:center;padding:16px 0 4px}
+.logo{font-weight:800;letter-spacing:7px;font-size:24px;color:var(--green)}
+.logo small{display:block;font-size:10px;letter-spacing:4px;color:var(--muted);font-weight:600;margin-top:2px}
+.hero{margin:12px 14px 4px;padding:16px 18px;border-radius:20px;background:linear-gradient(135deg,#ff6a2b,#ffb347);color:#fff;box-shadow:0 8px 20px rgba(255,106,43,.25)}
+.hero b{display:block;font-size:20px;margin-bottom:4px}
+.hero span{font-size:13px;opacity:.95}
+nav{position:sticky;top:0;background:rgba(255,255,255,.96);display:flex;gap:8px;overflow-x:auto;padding:10px 12px;z-index:5;border-bottom:1px solid var(--line);margin-top:10px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav button{flex:none;border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 15px;border-radius:22px;font-size:14px;font-weight:600}
+nav button.on{background:var(--or);border-color:var(--or);color:#fff}
+h2{margin:20px 16px 10px;font-size:20px;font-weight:800;scroll-margin-top:64px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 14px}
+.card{background:#fff;border-radius:20px;padding:12px;box-shadow:0 4px 16px rgba(60,40,20,.09);border:1px solid var(--line);display:flex;flex-direction:column}
+.pic{height:92px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:50px}
+.nm{font-size:15px;font-weight:700;margin:10px 2px 2px;line-height:1.2;min-height:36px}
+.pr{color:var(--or);font-weight:800;font-size:15px;margin:0 2px 10px}
+.row{margin-top:auto}
+.add{border:0;background:var(--or);color:#fff;width:100%;padding:11px;border-radius:14px;font-weight:800;font-size:14px}
+.step{display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--soft);border-radius:14px;padding:3px}
+.step button{border:0;background:var(--or);color:#fff;width:40px;height:36px;border-radius:11px;font-size:22px;font-weight:800;line-height:1}
+.step span{font-weight:800;font-size:16px}
+#bar{position:fixed;left:0;right:0;bottom:0;padding:10px 14px 16px;background:linear-gradient(rgba(255,255,255,0),#fff 35%);pointer-events:none}
+#cartBtn{pointer-events:auto;width:100%;border:0;background:linear-gradient(135deg,var(--or),var(--or2));color:#fff;padding:16px 18px;border-radius:18px;font-size:16px;font-weight:800;display:flex;justify-content:space-between;align-items:center;box-shadow:0 10px 24px rgba(255,106,43,.35)}
+#cartBtn.off{background:#e9e1d8;color:#a39a90;box-shadow:none;justify-content:center}
+#sheet{position:fixed;left:0;right:0;top:0;bottom:0;background:rgba(30,20,10,.45);display:none;align-items:flex-end;z-index:20}
 #sheet.show{display:flex}
-.pane{background:var(--bg);width:100%;max-height:85vh;overflow:auto;border-radius:20px 20px 0 0;padding:16px}
-.line{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #2a302a;gap:10px}
-.line .l{flex:1;font-size:14px;color:var(--muted)}
-.line .l b{display:block;color:var(--text)}
-.sum{display:flex;justify-content:space-between;padding:6px 0;color:var(--muted)}
-.sum.t{color:var(--text);font-weight:800;font-size:17px}
-.sec{display:flex;gap:10px;margin-top:14px}
-.sec button{flex:1;border:0;border-radius:14px;padding:14px;font-size:15px;font-weight:700}
-.b1{background:var(--card);color:var(--text)}
-.b2{background:var(--green);color:#10140f}
+.pane{background:#fff;width:100%;max-height:88vh;overflow:auto;border-radius:24px 24px 0 0;padding:10px 18px 22px;box-shadow:0 -10px 30px rgba(0,0,0,.15)}
+.grab{width:44px;height:5px;border-radius:3px;background:#e3dbd2;margin:4px auto 12px}
+.pane h3{margin:0 0 6px;font-size:20px}
+.line{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);gap:10px}
+.line .l{flex:1;font-size:13px;color:var(--muted)}
+.line .l b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+.sum{display:flex;justify-content:space-between;padding:6px 0;color:var(--muted);font-size:14px}
+.sum.t{color:var(--ink);font-weight:800;font-size:19px;padding-top:12px}
+.note{margin-top:8px;padding:10px 12px;background:var(--soft);border-radius:12px;font-size:13px;color:#8a5a2b}
+.sec{display:flex;gap:10px;margin-top:16px}
+.sec button{flex:1;border:0;border-radius:16px;padding:15px;font-size:15px;font-weight:800}
+.b1{background:#f4eee8;color:var(--ink)}
+.sec .b2{background:linear-gradient(135deg,var(--or),var(--or2));color:#fff;flex:1.5}
 </style>
 </head>
 <body>
-<header>BENITO<small>FAMILY CAFE</small></header>
+<header><div class="logo">BENITO<small>FAMILY CAFE</small></div></header>
+<div class="hero"><b>Issiq va mazali! 🔥</b><span>Yetkazish 5 000 so'm · Naqd pul · 08:30 – 05:00</span></div>
 <nav id="nav"></nav>
 <div id="menu"></div>
 <div id="bar"><button id="cartBtn" class="off">Savat bo'sh</button></div>
 <div id="sheet"><div class="pane" id="pane"></div></div>
 <script>
 var tg = window.Telegram && window.Telegram.WebApp;
-if (tg) { tg.ready(); tg.expand(); }
+if (tg) {
+  tg.ready(); tg.expand();
+  try { tg.setHeaderColor("#ffffff"); tg.setBackgroundColor("#ffffff"); } catch (e) {}
+}
 var DELIVERY = 5000;
 var MENU = [
- {n:"Hot-dog", e:"🌭", items:[["Canada",14000],["Shoxona",20000],["Retro",18000],["Qazili",32000],["Qazili kichik",26000],["Qazi assorti",30000],["Qazi assorti kichik",24000],["Go'shtli",25000],["Xalapeno",20000]]},
- {n:"Lavash", e:"🌯", items:[["Original",34000],["Pishloqli",37000],["Qalampir",34000],["Super",38000],["Kichik",23000]]},
- {n:"Burger", e:"🍔", items:[["Chicken burger",25000],["Gam burger",25000],["Cheese burger",28000],["Double burger",34000],["Double cheeseburger",38000]]},
- {n:"Boshqa", e:"🥪", items:[["Toster",30000],["Donar",45000],["Nonkabob",35000],["Nonkabob kichik",26000],["Club sandwich",35000],["Sezar salat",30000],["Kartoshka fri katta",15000],["Kartoshka fri kichik",9000]]},
- {n:"Nagetto", e:"🍗", items:[["Nagetto 6 talik",15000],["Nagetto 8 talik",18000],["Nagetto 18 talik",38000]]},
- {n:"Choy va kofe", e:"☕", items:[["Ko'k choy",4000],["Qora choy",4000],["Limon choy",6000],["Kofe qora",8000],["Kofe malochniy",8000]]},
- {n:"Ichimliklar", e:"🥤", items:[["Tabiiy sharbat",15000],["Flavis katta",12000],["Flavis kichik",8000],["Family 0.5",4000]]}
+ {n:"Hot-dog", e:"🌭", bg:"#ffe8d6", items:[["Canada",14000],["Shoxona",20000],["Retro",18000],["Qazili",32000],["Qazili kichik",26000],["Qazi assorti",30000],["Qazi assorti kichik",24000],["Go'shtli",25000],["Xalapeno",20000]]},
+ {n:"Lavash", e:"🌯", bg:"#fff1c9", items:[["Original",34000],["Pishloqli",37000],["Qalampir",34000],["Super",38000],["Kichik",23000]]},
+ {n:"Burger", e:"🍔", bg:"#ffe0d0", items:[["Chicken burger",25000],["Gam burger",25000],["Cheese burger",28000],["Double burger",34000],["Double cheeseburger",38000]]},
+ {n:"Boshqa", e:"🥪", bg:"#ffefe0", items:[["Toster",30000,"🥪"],["Donar",45000,"🍛"],["Nonkabob",35000,"🥙"],["Nonkabob kichik",26000,"🥙"],["Club sandwich",35000,"🥪"],["Sezar salat",30000,"🥗"],["Kartoshka fri katta",15000,"🍟"],["Kartoshka fri kichik",9000,"🍟"]]},
+ {n:"Nagetto", e:"🍗", bg:"#fff0c2", items:[["Nagetto 6 talik",15000],["Nagetto 8 talik",18000],["Nagetto 18 talik",38000]]},
+ {n:"Choy va kofe", e:"☕", bg:"#f3e9df", items:[["Ko'k choy",4000,"🍵"],["Qora choy",4000,"🍵"],["Limon choy",6000,"🍋"],["Kofe qora",8000,"☕"],["Kofe malochniy",8000,"☕"]]},
+ {n:"Ichimliklar", e:"🥤", bg:"#e2f3ee", items:[["Tabiiy sharbat",15000,"🧃"],["Flavis katta",12000,"🥤"],["Flavis kichik",8000,"🥤"],["Family 0.5",4000,"💧"]]}
 ];
-var ITEMS = [], cart = {}, sheetOpen = false;
-MENU.forEach(function(c, ci){ c.items.forEach(function(it){ ITEMS.push({n:it[0], p:it[1], e:c.e}); }); });
+var ITEMS = [], cart = {}, sheetOpen = false, sending = false;
+MENU.forEach(function(c){ c.items.forEach(function(it){ ITEMS.push({n:it[0], p:it[1]}); }); });
 
 function som(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " so'm"; }
 
@@ -71,20 +86,35 @@ function ctl(i){
   return '<div class="step"><button onclick="sub(' + i + ')">−</button><span>' + q + '</span><button onclick="add(' + i + ')">+</button></div>';
 }
 
-var nav = document.getElementById("nav"), html = "", idx = 0;
+var nav = document.getElementById("nav"), chips = [], html = "", idx = 0, lastActive = null;
 MENU.forEach(function(c, ci){
   var b = document.createElement("button");
   b.textContent = c.e + " " + c.n;
   b.onclick = function(){ document.getElementById("cat" + ci).scrollIntoView({behavior:"smooth"}); };
   nav.appendChild(b);
+  chips.push(b);
   html += '<h2 id="cat' + ci + '">' + c.e + ' ' + c.n + '</h2><div class="grid">';
   c.items.forEach(function(it){
-    html += '<div class="card"><div class="emo">' + c.e + '</div><div><div class="nm">' + it[0] + '</div><div class="pr">' + som(it[1]) + '</div></div><div class="row" id="c' + idx + '">' + ctl(idx) + '</div></div>';
+    html += '<div class="card"><div class="pic" style="background:' + c.bg + '">' + (it[2] || c.e) + '</div><div class="nm">' + it[0] + '</div><div class="pr">' + som(it[1]) + '</div><div class="row" id="c' + idx + '">' + ctl(idx) + '</div></div>';
     idx++;
   });
   html += '</div>';
 });
 document.getElementById("menu").innerHTML = html;
+chips[0].className = "on";
+
+window.addEventListener("scroll", function(){
+  var cur = 0;
+  MENU.forEach(function(c, ci){
+    if (document.getElementById("cat" + ci).getBoundingClientRect().top < 130) cur = ci;
+  });
+  chips.forEach(function(b, ci){ b.className = (ci === cur) ? "on" : ""; });
+  var a = chips[cur];
+  if (a !== lastActive) {
+    lastActive = a;
+    try { nav.scrollTo({left: a.offsetLeft - 24, behavior: "smooth"}); } catch (e) {}
+  }
+}, {passive:true});
 
 function totals(){
   var c = 0, t = 0;
@@ -93,8 +123,8 @@ function totals(){
 }
 function bar(){
   var s = totals(), b = document.getElementById("cartBtn");
-  if (!s.c){ b.className = "off"; b.textContent = "Savat bo'sh"; }
-  else { b.className = ""; b.textContent = "🧺 Savat · " + s.c + " ta · " + som(s.t); }
+  if (!s.c){ b.className = "off"; b.innerHTML = "Savat bo'sh"; }
+  else { b.className = ""; b.innerHTML = '<span>🧺 Savat · ' + s.c + ' ta</span><span>' + som(s.t) + '</span>'; }
 }
 function changed(i){
   document.getElementById("c" + i).innerHTML = ctl(i);
@@ -108,16 +138,17 @@ function openCart(){
   var s = totals();
   if (!s.c) return;
   sheetOpen = true;
-  var h = '<h2 style="margin:0 0 8px">🧺 Savatingiz</h2>';
+  var h = '<div class="grab"></div><h3>🧺 Savatingiz</h3>';
   ITEMS.forEach(function(it, i){
     var q = cart[it.n] || 0;
     if (!q) return;
-    h += '<div class="line"><div class="l"><b>' + it.n + '</b>' + som(it.p * q) + '</div><div style="width:120px"><div class="step"><button onclick="sub(' + i + ')">−</button><span>' + q + '</span><button onclick="add(' + i + ')">+</button></div></div></div>';
+    h += '<div class="line"><div class="l"><b>' + it.n + '</b>' + som(it.p * q) + '</div><div style="width:124px"><div class="step"><button onclick="sub(' + i + ')">−</button><span>' + q + '</span><button onclick="add(' + i + ')">+</button></div></div></div>';
   });
   h += '<div class="sum"><span>Taomlar</span><span>' + som(s.t) + '</span></div>';
   h += '<div class="sum"><span>Yetkazish</span><span>' + som(DELIVERY) + '</span></div>';
   h += '<div class="sum t"><span>Jami</span><span>' + som(s.t + DELIVERY) + '</span></div>';
   h += '<div class="sum"><span>To\'lov</span><span>Naqd pul</span></div>';
+  h += '<div class="note">Buyurtmadan keyin bot telefon raqam va manzilingizni so\'raydi.</div>';
   h += '<div class="sec"><button class="b1" onclick="closeCart()">⬅️ Menyuga</button><button class="b2" onclick="order()">✅ Buyurtma berish</button></div>';
   document.getElementById("pane").innerHTML = h;
   document.getElementById("sheet").className = "show";
@@ -127,12 +158,19 @@ document.getElementById("cartBtn").onclick = openCart;
 document.getElementById("sheet").onclick = function(e){ if (e.target === this) closeCart(); };
 
 function order(){
+  if (sending) return;
   var items = [];
   Object.keys(cart).forEach(function(n){ items.push([n, cart[n]]); });
   if (!items.length) return;
   var data = JSON.stringify({i: items});
-  if (tg && tg.initData) { tg.sendData(data); }
-  else { alert("Sinov rejimi (Telegramdan tashqarida):\n" + data); }
+  var inTg = tg && tg.platform && tg.platform !== "unknown";
+  if (inTg) {
+    sending = true;
+    try { tg.sendData(data); }
+    catch (e) { sending = false; alert("Yuborib bo'lmadi. Qaytadan urinib ko'ring."); }
+  } else {
+    alert("Sinov rejimi (Telegramdan tashqarida):\n" + data);
+  }
 }
 </script>
 </body>
